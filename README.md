@@ -1,6 +1,8 @@
 # vue-admin-template-server
 
-配套 [vue-admin-template](https://github.com/PanJiaChen/vue-admin-template) 的 **Spring Boot 学习用后端**，接口契约与前端 `mock/` 目录保持一致，方便你从 mock 切换到真实后端。
+配套 [vue-admin-template](https://github.com/zl14342117/vue-admin-template) 的 **Spring Boot 练手后端**。
+
+Demo 业务代码已清空，仅保留登录鉴权骨架，方便按《练手项目执行清单》逐步新增模块。
 
 ## 技术栈
 
@@ -42,7 +44,6 @@ vue-admin-template-server/
 | POST | `/vue-admin-template/user/login` | 登录，账号 `admin` / `editor` |
 | GET | `/vue-admin-template/user/info?token=xxx` | 获取用户信息 |
 | POST | `/vue-admin-template/user/logout` | 登出 |
-| GET | `/vue-admin-template/table/list` | 表格列表（30 条模拟数据） |
 
 统一响应格式（与前端 `request.js` 一致）：
 
@@ -63,10 +64,12 @@ cd vue-admin-template-server
 mvn spring-boot:run
 ```
 
-验证：
+验证登录：
 
 ```bash
-curl http://127.0.0.1:8090/vue-admin-template/table/list
+curl -X POST http://127.0.0.1:8090/vue-admin-template/user/login \
+  -H "Content-Type: application/json" \
+  -d '{"username":"admin","password":"123456"}'
 ```
 
 ## 前端联调
@@ -108,9 +111,11 @@ npm run dev
 
 ## 建议练习
 
-1. **加接口**：在 `TableController` 新增 `GET /detail/{id}` 返回单条数据
-2. **接入 H2/MySQL**：把 `TableServiceImpl` 的内存数据改成数据库查询
-3. **加参数校验**：给 `table/list` 加分页参数 `page`、`limit`
+按前端仓库 `练手项目执行清单.md` 逐步新增模块，例如：
+
+1. **DashboardController**：工作台统计数据接口
+2. **SysUserController**：用户管理 CRUD
+3. **CustomerController**：客户管理 CRUD
 4. **对照 dc-portal-server**：打开 `LeadTimeReportController`，对比分层写法
 
 ## 常见问题
@@ -119,7 +124,7 @@ npm run dev
 检查 proxy 是否去掉 `/dev-api` 前缀，后端路径是 `/vue-admin-template/...` 不是 `/dev-api/...`。
 
 **Q: 登录报 60204？**  
-用户名必须是 `admin` 或 `editor`（与 mock 一致）。
+用户名必须是 `admin` 或 `editor`。
 
 **Q: code 不是 20000？**  
 前端 `request.js` 只认 `code === 20000` 为成功。
