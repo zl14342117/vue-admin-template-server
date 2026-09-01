@@ -1,0 +1,19 @@
+README.md
+  s_b7a814f242436a::t_ba28c5b951715a 3-5,67,70-72,114-118,127
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.5.8",
+  "base_commit_sha": "9b09339b88bb15a81b1dfdbe15a362c7ff5f05e6",
+  "prompts": {},
+  "sessions": {
+    "s_b7a814f242436a": {
+      "agent_id": {
+        "tool": "cursor",
+        "id": "af607888-e11b-4f01-a119-8d14513b5aa7",
+        "model": "default"
+      },
+      "human_author": "赵亮 <zt22732@ztn.com>"
+    }
+  }
+}
