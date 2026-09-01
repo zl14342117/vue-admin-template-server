@@ -1,0 +1,14 @@
+# 服务端口
+server:
+  port: 8090
+
+spring:
+  application:
+    name: vue-admin-template-server
+  jackson:
+    # 将 Java 驼峰字段转为 JSON 蛇形命名，如 displayTime -> display_time
+    property-naming-strategy: SNAKE_CASE
+
+logging:
+  level:
+    com.demo.admin: info
