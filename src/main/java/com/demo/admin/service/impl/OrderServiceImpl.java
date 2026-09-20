@@ -13,6 +13,7 @@ import com.demo.admin.pojo.entity.CustomerDO;
 import com.demo.admin.pojo.entity.OrderDO;
 import com.demo.admin.pojo.entity.OrderItemDO;
 import com.demo.admin.pojo.entity.ProductDO;
+import com.demo.admin.pojo.excel.OrderExportRow;
 import com.demo.admin.pojo.vo.OrderItemVO;
 import com.demo.admin.pojo.vo.OrderPageVO;
 import com.demo.admin.pojo.vo.OrderVO;
@@ -62,6 +63,34 @@ public class OrderServiceImpl implements OrderService {
         int pageNo = page == null || page < 1 ? 1 : page;
         int pageSize = limit == null || limit < 1 ? 10 : limit;
 
+        Page<OrderDO> result = orderMapper.selectPage(
+                new Page<OrderDO>(pageNo, pageSize),
+                buildQueryWrapper(keyword, status));
+        List<OrderVO> pageList = result.getRecords().stream()
+                .map(order -> toVO(order, false))
+                .collect(Collectors.toList());
+        return new OrderPageVO(result.getTotal(), pageList);
+    }
+
+    @Override
+    public List<OrderExportRow> listForExport(String keyword, Integer status) {
+        List<OrderDO> records = orderMapper.selectList(buildQueryWrapper(keyword, status));
+        List<OrderExportRow> rows = new ArrayList<OrderExportRow>();
+        for (OrderDO order : records) {
+            OrderExportRow row = new OrderExportRow();
+            row.setOrderNo(order.getOrderNo());
+            row.setCustomerName(order.getCustomerName());
+            row.setTotalAmount(order.getTotalAmount() == null ? "0.00" : order.getTotalAmount().toPlainString());
+            row.setStatusText(statusLabel(order.getStatus()));
+            if (order.getCreatedAt() != null) {
+                row.setCreatedAt(order.getCreatedAt().format(DATE_TIME_FORMATTER));
+            }
+            rows.add(row);
+        }
+        return rows;
+    }
+
+    private LambdaQueryWrapper<OrderDO> buildQueryWrapper(String keyword, Integer status) {
         LambdaQueryWrapper<OrderDO> wrapper = new LambdaQueryWrapper<OrderDO>()
                 .orderByDesc(OrderDO::getId);
         if (StringUtils.hasText(keyword)) {
@@ -73,12 +102,23 @@ public class OrderServiceImpl implements OrderService {
         if (status != null) {
             wrapper.eq(OrderDO::getStatus, status);
         }
+        return wrapper;
+    }
 
-        Page<OrderDO> result = orderMapper.selectPage(new Page<OrderDO>(pageNo, pageSize), wrapper);
-        List<OrderVO> pageList = result.getRecords().stream()
-                .map(order -> toVO(order, false))
-                .collect(Collectors.toList());
-        return new OrderPageVO(result.getTotal(), pageList);
+    private String statusLabel(Integer status) {
+        if (status == null) {
+            return "";
+        }
+        if (status == STATUS_PENDING) {
+            return "待支付";
+        }
+        if (status == STATUS_PAID) {
+            return "已支付";
+        }
+        if (status == STATUS_CANCELLED) {
+            return "已取消";
+        }
+        return String.valueOf(status);
     }
 
     @Override

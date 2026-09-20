@@ -7,6 +7,7 @@ import com.demo.admin.exception.BusinessException;
 import com.demo.admin.mapper.CustomerMapper;
 import com.demo.admin.pojo.dto.CustomerSaveDTO;
 import com.demo.admin.pojo.entity.CustomerDO;
+import com.demo.admin.pojo.excel.CustomerExportRow;
 import com.demo.admin.pojo.vo.CustomerOptionVO;
 import com.demo.admin.pojo.vo.CustomerPageVO;
 import com.demo.admin.pojo.vo.CustomerVO;
@@ -18,6 +19,7 @@ import javax.annotation.Resource;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -39,6 +41,35 @@ public class CustomerServiceImpl implements CustomerService {
         int pageNo = page == null || page < 1 ? 1 : page;
         int pageSize = limit == null || limit < 1 ? 10 : limit;
 
+        Page<CustomerDO> result = customerMapper.selectPage(
+                new Page<CustomerDO>(pageNo, pageSize),
+                buildQueryWrapper(keyword, status));
+        List<CustomerVO> pageList = result.getRecords().stream()
+                .map(this::toVO)
+                .collect(Collectors.toList());
+        return new CustomerPageVO(result.getTotal(), pageList);
+    }
+
+    @Override
+    public List<CustomerExportRow> listForExport(String keyword, Integer status) {
+        List<CustomerDO> records = customerMapper.selectList(buildQueryWrapper(keyword, status));
+        List<CustomerExportRow> rows = new ArrayList<CustomerExportRow>();
+        for (CustomerDO customer : records) {
+            CustomerExportRow row = new CustomerExportRow();
+            row.setCustomerNo(customer.getCustomerNo());
+            row.setName(customer.getName());
+            row.setContact(customer.getContact());
+            row.setPhone(customer.getPhone());
+            row.setStatusText(customer.getStatus() != null && customer.getStatus() == 1 ? "启用" : "禁用");
+            if (customer.getCreatedAt() != null) {
+                row.setCreatedAt(customer.getCreatedAt().format(DATE_TIME_FORMATTER));
+            }
+            rows.add(row);
+        }
+        return rows;
+    }
+
+    private LambdaQueryWrapper<CustomerDO> buildQueryWrapper(String keyword, Integer status) {
         LambdaQueryWrapper<CustomerDO> wrapper = new LambdaQueryWrapper<CustomerDO>()
                 .orderByDesc(CustomerDO::getId);
         if (StringUtils.hasText(keyword)) {
@@ -54,12 +85,7 @@ public class CustomerServiceImpl implements CustomerService {
         if (status != null) {
             wrapper.eq(CustomerDO::getStatus, status);
         }
-
-        Page<CustomerDO> result = customerMapper.selectPage(new Page<CustomerDO>(pageNo, pageSize), wrapper);
-        List<CustomerVO> pageList = result.getRecords().stream()
-                .map(this::toVO)
-                .collect(Collectors.toList());
-        return new CustomerPageVO(result.getTotal(), pageList);
+        return wrapper;
     }
 
     @Override
