@@ -1,0 +1,79 @@
+src/main/java/com/demo/admin/pojo/entity/SysUserDO.java
+  s_b7a814f242436a::t_6376f44dd100f0 1-2,6-10,12-13,15-16,18-33
+  s_b7a814f242436a::t_869d6f951dc4c0 3-5,11,14,17
+src/main/java/com/demo/admin/mapper/SysUserMapper.java
+  s_b7a814f242436a::t_0025d48244f66d 1-12
+src/main/java/com/demo/admin/demo/HelloWorld.java
+  s_b7a814f242436a::t_94f46787353668 16-17
+  s_b7a814f242436a::t_81ec57fa5116c4 20
+  s_b7a814f242436a::t_87b94a5dac2f09 15,22-24
+  s_b7a814f242436a::t_7695d49dedd750 1-2,5-6,12-14,30
+  h_f71aaeabc2daf0 3-4,7-11,18-19,21,25-29
+src/main/java/com/demo/admin/service/SysUserService.java
+  s_b7a814f242436a::t_06727802ab7b9b 1-28
+src/main/java/com/demo/admin/controller/SysUserController.java
+  s_b7a814f242436a::t_d32a7ee198ae0f 1-65
+start-debug.sh
+  s_b7a814f242436a::t_4e13b2e4c95494 1-8,15-23
+  s_b7a814f242436a::t_bb24c61402202b 24
+  s_b7a814f242436a::t_be9e0b72e48e0b 9-14
+docker-compose.yml
+  s_b7a814f242436a::t_205230081b8e09 1-25,40-41
+  s_b7a814f242436a::t_22d5cdb9d7aab8 26-39
+src/main/java/com/demo/admin/config/MybatisPlusConfig.java
+  s_b7a814f242436a::t_ffc088cec5082f 1-23
+src/main/java/com/demo/admin/common/GlobalExceptionHandler.java
+  s_b7a814f242436a::t_32f7a1afca5db8 5
+  s_b7a814f242436a::t_3efe672fad721a 20-36
+  s_b7a814f242436a::t_efddfcabc3f74d 4
+src/main/java/com/demo/admin/pojo/dto/SysUserSaveDTO.java
+  s_b7a814f242436a::t_472ab1254c2701 1-28
+src/main/java/com/demo/admin/service/impl/SysUserServiceImpl.java
+  s_b7a814f242436a::t_c16ecd9103c7ed 26-31,34-39,48,51-52,54-57,59-76,78-95,97-105,107-130,136-141,145-153,157-163
+  s_b7a814f242436a::t_3efbf5c49d5d00 3-4,7,16,23,32-33,40-47,49-50,53,58,77,96,106,131-135,142-144,154-156
+  s_b7a814f242436a::t_9a1b9b62b46d5b 1-2,5-6,8-15,17-22,24-25
+sql/fix-nickname.sql
+  s_b7a814f242436a::t_8be90209266fc3 1-11
+sql/init.sql
+  s_b7a814f242436a::t_9b2e8194a48299 3-5
+  s_b7a814f242436a::t_dcac9214aca847 1-2,6-36
+src/main/java/com/demo/admin/service/impl/UserServiceImpl.java
+  s_b7a814f242436a::t_1acea4182bf3c0 6,9,13-14,17,22-23,25-26,30-34,37,42-43,46-51,56
+src/main/resources/application.yml
+  s_b7a814f242436a::t_829083c12810da 12
+  s_b7a814f242436a::t_e4d2db7bfeb667 11,13-25,30
+src/main/java/com/demo/admin/pojo/vo/SysUserVO.java
+  s_b7a814f242436a::t_0b00c87ac1e43c 1-22
+src/main/java/com/demo/admin/common/ApiCodes.java
+  s_b7a814f242436a::t_4b0988e68a17b1 17-22
+README.md
+  s_b7a814f242436a::t_32e4a7f1652478 5,11-12,18-19,22-26,29-32,42-43,50,53-57,69-71,76-90,109-119,123-129,135,138-141,144-146,153,155-161,165-167,169,171-172
+  s_b7a814f242436a::t_ba9ebb33516b01 92-108
+src/main/java/com/demo/admin/pojo/vo/SysUserPageVO.java
+  s_b7a814f242436a::t_e6007601078d4b 1-20
+.vscode/launch.json
+  s_b7a814f242436a::t_aa146b1b47646d 1-12
+pom.xml
+  s_b7a814f242436a::t_07e6f0e19550f6 34-46
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.5.8",
+  "base_commit_sha": "4c26f9611fb592bc92651d370e198d21924f0f99",
+  "prompts": {},
+  "humans": {
+    "h_f71aaeabc2daf0": {
+      "author": "赵亮 <zt22732@ztn.com>"
+    }
+  },
+  "sessions": {
+    "s_b7a814f242436a": {
+      "agent_id": {
+        "tool": "cursor",
+        "id": "af607888-e11b-4f01-a119-8d14513b5aa7",
+        "model": "default"
+      },
+      "human_author": "赵亮 <zt22732@ztn.com>"
+    }
+  }
+}
