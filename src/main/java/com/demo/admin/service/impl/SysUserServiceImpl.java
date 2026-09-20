@@ -10,6 +10,7 @@ import com.demo.admin.pojo.entity.SysUserDO;
 import com.demo.admin.pojo.vo.SysUserPageVO;
 import com.demo.admin.pojo.vo.SysUserVO;
 import com.demo.admin.service.SysUserService;
+import com.demo.admin.util.JwtUtil;
 import org.springframework.stereotype.Service;
 import org.springframework.util.StringUtils;
 
@@ -27,10 +28,11 @@ public class SysUserServiceImpl implements SysUserService {
 
     private static final DateTimeFormatter DATE_TIME_FORMATTER = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss");
 
-    private static final String TOKEN_SUFFIX = "-token";
-
     @Resource
     private SysUserMapper sysUserMapper;
+
+    @Resource
+    private JwtUtil jwtUtil;
 
     @Override
     public SysUserPageVO list(Integer page, Integer limit, String keyword) {
@@ -120,11 +122,25 @@ public class SysUserServiceImpl implements SysUserService {
 
     @Override
     public SysUserDO findByToken(String token) {
-        if (!StringUtils.hasText(token) || !token.endsWith(TOKEN_SUFFIX)) {
+        String username = jwtUtil.getUsername(token);
+        if (!StringUtils.hasText(username)) {
             return null;
         }
-        String username = token.substring(0, token.length() - TOKEN_SUFFIX.length());
-        return findByUsername(username);
+        SysUserDO user = findByUsername(username);
+        if (user == null || user.getStatus() == null || user.getStatus() != 1) {
+            return null;
+        }
+        return user;
+    }
+
+    @Override
+    public SysUserDO findByUsername(String username) {
+        if (!StringUtils.hasText(username)) {
+            return null;
+        }
+        return sysUserMapper.selectOne(new LambdaQueryWrapper<SysUserDO>()
+                .eq(SysUserDO::getUsername, username.trim())
+                .last("LIMIT 1"));
     }
 
     private SysUserDO findById(Long id) {
@@ -133,15 +149,6 @@ public class SysUserServiceImpl implements SysUserService {
             throw new BusinessException(ApiCodes.NOT_FOUND, "用户不存在");
         }
         return user;
-    }
-
-    private SysUserDO findByUsername(String username) {
-        if (!StringUtils.hasText(username)) {
-            return null;
-        }
-        return sysUserMapper.selectOne(new LambdaQueryWrapper<SysUserDO>()
-                .eq(SysUserDO::getUsername, username.trim())
-                .last("LIMIT 1"));
     }
 
     private SysUserVO toVO(SysUserDO user) {
@@ -155,9 +162,5 @@ public class SysUserServiceImpl implements SysUserService {
             vo.setCreatedAt(user.getCreatedAt().format(DATE_TIME_FORMATTER));
         }
         return vo;
-    }
-
-    public static String buildToken(String username) {
-        return username + TOKEN_SUFFIX;
     }
 }

@@ -8,6 +8,7 @@ import com.demo.admin.pojo.vo.TokenVO;
 import com.demo.admin.pojo.vo.UserInfoVO;
 import com.demo.admin.service.SysUserService;
 import com.demo.admin.service.UserService;
+import com.demo.admin.util.JwtUtil;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;
@@ -25,6 +26,9 @@ public class UserServiceImpl implements UserService {
     @Resource
     private SysUserService sysUserService;
 
+    @Resource
+    private JwtUtil jwtUtil;
+
     @Override
     public TokenVO login(LoginRequest request) {
         SysUserDO user = sysUserService.findActiveUser(
@@ -34,7 +38,7 @@ public class UserServiceImpl implements UserService {
         if (user == null) {
             throw new BusinessException(ApiCodes.LOGIN_FAILED, "账号或密码错误");
         }
-        return new TokenVO(SysUserServiceImpl.buildToken(user.getUsername()));
+        return new TokenVO(jwtUtil.createToken(user.getUsername(), user.getRole()));
     }
 
     @Override
@@ -53,6 +57,6 @@ public class UserServiceImpl implements UserService {
 
     @Override
     public void logout() {
-        // 无状态 token，登出由前端清除 cookie 完成
+        // JWT 无状态，登出由前端清除 cookie 完成
     }
 }

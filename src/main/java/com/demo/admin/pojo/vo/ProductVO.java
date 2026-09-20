@@ -24,5 +24,7 @@ public class ProductVO {
 
     private Integer status;
 
+    private String imageUrl;
+
     private String createdAt;
 }

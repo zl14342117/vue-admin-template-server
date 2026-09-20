@@ -86,6 +86,7 @@ CREATE TABLE IF NOT EXISTS sys_product (
   price       DECIMAL(12, 2) NOT NULL COMMENT '单价',
   stock       INT            NOT NULL DEFAULT 0 COMMENT '库存',
   status      TINYINT        NOT NULL DEFAULT 1 COMMENT '状态：1上架 0下架',
+  image_url   VARCHAR(255)   DEFAULT NULL COMMENT '商品图片路径',
   created_at  DATETIME       NOT NULL DEFAULT CURRENT_TIMESTAMP COMMENT '创建时间',
   PRIMARY KEY (id),
   UNIQUE KEY uk_code (code)

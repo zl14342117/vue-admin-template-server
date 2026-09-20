@@ -116,6 +116,7 @@ public class ProductServiceImpl implements ProductService {
         product.setPrice(dto.getPrice());
         product.setStock(dto.getStock());
         product.setStatus(dto.getStatus());
+        product.setImageUrl(StringUtils.hasText(dto.getImageUrl()) ? dto.getImageUrl().trim() : null);
     }
 
     private ProductDO findById(Long id) {
@@ -144,6 +145,7 @@ public class ProductServiceImpl implements ProductService {
         vo.setPrice(product.getPrice());
         vo.setStock(product.getStock());
         vo.setStatus(product.getStatus());
+        vo.setImageUrl(product.getImageUrl());
         if (product.getCreatedAt() != null) {
             vo.setCreatedAt(product.getCreatedAt().format(DATE_TIME_FORMATTER));
         }

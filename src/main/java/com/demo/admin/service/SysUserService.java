@@ -23,6 +23,9 @@ public interface SysUserService {
     /** 登录鉴权：按用户名密码查找启用用户 */
     SysUserDO findActiveUser(String username, String password);
 
-    /** 登录鉴权：按 token 查找用户 */
+    /** 登录鉴权：按 JWT 查找用户 */
     SysUserDO findByToken(String token);
+
+    /** 按用户名查找 */
+    SysUserDO findByUsername(String username);
 }

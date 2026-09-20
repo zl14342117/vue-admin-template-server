@@ -35,4 +35,7 @@ public class ProductSaveDTO {
 
     @NotNull(message = "状态不能为空")
     private Integer status;
+
+    /** 商品图片 URL，可选 */
+    private String imageUrl;
 }

@@ -6,11 +6,20 @@ spring:
     name: vue-admin-template-server
   jackson:
     property-naming-strategy: SNAKE_CASE
+  servlet:
+    multipart:
+      max-file-size: 2MB
+      max-request-size: 2MB
   datasource:
     url: jdbc:mysql://127.0.0.1:3306/vue_admin?useUnicode=true&characterEncoding=UTF-8&connectionCollation=utf8mb4_unicode_ci&serverTimezone=Asia/Shanghai&useSSL=false&allowPublicKeyRetrieval=true
     username: root
     password: root123
     driver-class-name: com.mysql.cj.jdbc.Driver
+
+# 本地上传目录（相对进程工作目录）
+app:
+  upload:
+    dir: uploads
 
 mybatis-plus:
   configuration:
@@ -22,6 +31,11 @@ mybatis-plus:
     db-config:
       id-type: auto
       table-underline: true
+
+# 练手 JWT 配置（生产请换密钥并外置）
+jwt:
+  secret: liteops-vue-admin-template-jwt-secret-key-2026
+  expire-hours: 24
 
 logging:
   level:
