@@ -1,0 +1,39 @@
+src/main/java/com/demo/admin/controller/CustomerController.java
+  s_b7a814f242436a::t_651a4ef55e443b 5,10,23-26,36-37,51-59
+src/main/java/com/demo/admin/service/CustomerService.java
+  s_b7a814f242436a::t_00cfae9a07037e 4,18-19
+src/main/java/com/demo/admin/controller/OrderController.java
+  s_b7a814f242436a::t_677f285c1c562e 5,9,21-25,34-35,48-56
+src/main/java/com/demo/admin/service/impl/OrderServiceImpl.java
+  s_b7a814f242436a::t_30cad5d4e2fee4 66-93,105-106,108-121
+  s_b7a814f242436a::t_e4cdcc3e95c065 16
+src/main/java/com/demo/admin/util/ExcelExportUtil.java
+  s_b7a814f242436a::t_27444ac830684f 1-28
+src/main/java/com/demo/admin/pojo/excel/OrderExportRow.java
+  s_b7a814f242436a::t_f5f04dff775d3a 1-32
+src/main/java/com/demo/admin/service/OrderService.java
+  s_b7a814f242436a::t_5087a5f8f1ff9c 4,8-9,17-18
+src/main/java/com/demo/admin/service/impl/CustomerServiceImpl.java
+  s_b7a814f242436a::t_102e7f3cc3b024 44-72,88
+  s_b7a814f242436a::t_b2d0a35532c593 10,22
+src/main/java/com/demo/admin/pojo/excel/CustomerExportRow.java
+  s_b7a814f242436a::t_a662152cbfc220 1-36
+pom.xml
+  s_b7a814f242436a::t_8c3ed36c5c5fc4 47-51
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.5.8",
+  "base_commit_sha": "d1d6ebc7d4b6703fc947c82f99ee3225bfd13a84",
+  "prompts": {},
+  "sessions": {
+    "s_b7a814f242436a": {
+      "agent_id": {
+        "tool": "cursor",
+        "id": "af607888-e11b-4f01-a119-8d14513b5aa7",
+        "model": "default"
+      },
+      "human_author": "赵亮 <zt22732@ztn.com>"
+    }
+  }
+}
