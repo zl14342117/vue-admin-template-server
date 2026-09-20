@@ -14,6 +14,12 @@ public final class ApiCodes {
     /** token 无效 */
     public static final int INVALID_TOKEN = 50008;
 
+    /** 请求参数错误 */
+    public static final int BAD_REQUEST = 40000;
+
+    /** 资源不存在 */
+    public static final int NOT_FOUND = 40404;
+
     private ApiCodes() {
     }
 }

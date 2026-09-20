@@ -8,7 +8,23 @@ spring:
   jackson:
     # 将 Java 驼峰字段转为 JSON 蛇形命名，如 displayTime -> display_time
     property-naming-strategy: SNAKE_CASE
+  datasource:
+    url: jdbc:mysql://127.0.0.1:3306/vue_admin?useUnicode=true&characterEncoding=UTF-8&connectionCollation=utf8mb4_unicode_ci&serverTimezone=Asia/Shanghai&useSSL=false&allowPublicKeyRetrieval=true
+    username: root
+    password: root123
+    driver-class-name: com.mysql.cj.jdbc.Driver
+
+# MyBatis-Plus
+mybatis-plus:
+  configuration:
+    map-underscore-to-camel-case: true
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+  global-config:
+    db-config:
+      id-type: auto
+      table-underline: true
 
 logging:
   level:
     com.demo.admin: info
+    com.demo.admin.mapper: debug

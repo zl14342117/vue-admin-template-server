@@ -1,0 +1,12 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "type": "java",
+      "name": "Debug vue-admin-template-server",
+      "request": "launch",
+      "mainClass": "com.demo.admin.VueAdminTemplateApplication",
+      "projectName": "vue-admin-template-server"
+    }
+  ]
+}

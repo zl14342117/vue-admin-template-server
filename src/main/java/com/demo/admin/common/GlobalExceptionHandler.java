@@ -1,6 +1,8 @@
 package com.demo.admin.common;
 
 import com.demo.admin.exception.BusinessException;
+import org.springframework.validation.BindException;
+import org.springframework.web.bind.MethodArgumentNotValidException;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.RestControllerAdvice;
 
@@ -13,6 +15,23 @@ public class GlobalExceptionHandler {
     @ExceptionHandler(BusinessException.class)
     public ApiResponse<Void> handleBusinessException(BusinessException ex) {
         return ApiResponse.fail(ex.getCode(), ex.getMessage());
+    }
+
+    @ExceptionHandler({MethodArgumentNotValidException.class, BindException.class})
+    public ApiResponse<Void> handleValidationException(Exception ex) {
+        String message = "参数校验失败";
+        if (ex instanceof MethodArgumentNotValidException) {
+            MethodArgumentNotValidException validException = (MethodArgumentNotValidException) ex;
+            if (validException.getBindingResult().getFieldError() != null) {
+                message = validException.getBindingResult().getFieldError().getDefaultMessage();
+            }
+        } else if (ex instanceof BindException) {
+            BindException bindException = (BindException) ex;
+            if (bindException.getBindingResult().getFieldError() != null) {
+                message = bindException.getBindingResult().getFieldError().getDefaultMessage();
+            }
+        }
+        return ApiResponse.fail(ApiCodes.BAD_REQUEST, message);
     }
 
     @ExceptionHandler(Exception.class)
