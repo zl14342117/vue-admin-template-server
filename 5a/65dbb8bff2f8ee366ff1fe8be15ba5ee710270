@@ -1,0 +1,140 @@
+src/main/java/com/demo/admin/pojo/entity/CustomerDO.java
+  s_b7a814f242436a::t_680990aad57890 1-32
+src/main/java/com/demo/admin/controller/ReportController.java
+  s_b7a814f242436a::t_10926f1f4d47b6 1-30
+src/main/java/com/demo/admin/service/impl/SysRoleServiceImpl.java
+  s_b7a814f242436a::t_18a66768d4b97d 1-156
+src/main/java/com/demo/admin/pojo/dto/SysRoleSaveDTO.java
+  s_b7a814f242436a::t_d678faf9c260c5 1-22
+src/main/java/com/demo/admin/controller/SysRoleController.java
+  s_b7a814f242436a::t_897393097db1d4 1-73
+src/main/java/com/demo/admin/controller/CustomerController.java
+  s_b7a814f242436a::t_cbc49c412c660a 1-4,6-20,22-42,49-74
+  s_b7a814f242436a::t_9c040c84db887f 5,21,45
+  s_b7a814f242436a::t_24d955f121adf8 43-44,46-48
+sql/sys_order.sql
+  s_b7a814f242436a::t_7cf1c158c44160 1-30
+src/main/java/com/demo/admin/pojo/vo/OrderItemVO.java
+  s_b7a814f242436a::t_745786c084358b 1-26
+src/main/java/com/demo/admin/service/ReportService.java
+  s_b7a814f242436a::t_aafe575e98ec9a 1-17
+src/main/java/com/demo/admin/service/SysRoleService.java
+  s_b7a814f242436a::t_5f75599f1b86a2 1-26
+src/main/java/com/demo/admin/pojo/vo/CustomerVO.java
+  s_b7a814f242436a::t_de80002576d290 1-24
+src/main/java/com/demo/admin/mapper/OrderMapper.java
+  s_b7a814f242436a::t_006c6d79f1b46a 1-9
+src/main/java/com/demo/admin/pojo/dto/OrderCreateDTO.java
+  s_b7a814f242436a::t_729848784f5454 1-34
+src/main/java/com/demo/admin/mapper/CustomerMapper.java
+  s_b7a814f242436a::t_4f312c9249032c 1-12
+src/main/java/com/demo/admin/service/ProductService.java
+  s_b7a814f242436a::t_b49ae1e27dbfe7 1-26
+src/main/java/com/demo/admin/pojo/dto/CustomerSaveDTO.java
+  s_b7a814f242436a::t_d4097decb2be6d 1-27
+src/main/java/com/demo/admin/pojo/entity/OrderDO.java
+  s_b7a814f242436a::t_6613703bb648a4 1-33
+src/main/java/com/demo/admin/service/impl/DashboardServiceImpl.java
+  s_b7a814f242436a::t_aecb0355a6282b 3,5,8,17,23,39-41,52-72,82-86
+  s_b7a814f242436a::t_7cb8ae8489a42e 4,33-35,46,49
+  s_b7a814f242436a::t_c6fae525cc79f0 6,36-38,47,50
+  s_b7a814f242436a::t_794053fccc28f1 1-2,7,9-16,18-22,24-32,42-45,48,51,73-81,87-90
+src/main/java/com/demo/admin/service/DashboardService.java
+  s_b7a814f242436a::t_3e84d95a06af20 1-11
+src/main/java/com/demo/admin/pojo/vo/DashboardSummaryVO.java
+  s_b7a814f242436a::t_530035f79f1d49 1-31
+src/main/java/com/demo/admin/pojo/vo/ProductVO.java
+  s_b7a814f242436a::t_aac99796fab180 1-28
+src/main/java/com/demo/admin/pojo/entity/OrderItemDO.java
+  s_b7a814f242436a::t_c174c779bd29a5 1-33
+src/main/java/com/demo/admin/service/CustomerService.java
+  s_b7a814f242436a::t_d6264278e1a303 1-3,5-7,10-15,18-26
+  s_b7a814f242436a::t_9b30bdd5f36e5a 4,8-9,16-17
+sql/init.sql
+  s_b7a814f242436a::t_e5f6cfcb89cf77 37-54
+  s_b7a814f242436a::t_24ae78872f495c 55-79
+  s_b7a814f242436a::t_e94e6bbea8c685 80-105
+  s_b7a814f242436a::t_46f99fdcc7ce79 106-132
+src/main/java/com/demo/admin/service/OrderService.java
+  s_b7a814f242436a::t_3780ed67ba99a6 1-21
+src/main/java/com/demo/admin/controller/OrderController.java
+  s_b7a814f242436a::t_5e12493c7af18b 1-58
+src/main/java/com/demo/admin/pojo/vo/ReportDailySalesVO.java
+  s_b7a814f242436a::t_7b032c625e8933 1-20
+sql/sys_product.sql
+  s_b7a814f242436a::t_9c58dd5bf5d7c5 1-29
+src/main/java/com/demo/admin/controller/ProductController.java
+  s_b7a814f242436a::t_66a09d393c1b0f 1-75
+src/main/java/com/demo/admin/pojo/dto/ProductSaveDTO.java
+  s_b7a814f242436a::t_3ebe9cc67ea24d 1-38
+sql/sys_role.sql
+  s_b7a814f242436a::t_08ec6833d4c20f 1-21
+src/main/java/com/demo/admin/mapper/ProductMapper.java
+  s_b7a814f242436a::t_90094151ff77c6 1-12
+src/main/java/com/demo/admin/pojo/vo/ProductPageVO.java
+  s_b7a814f242436a::t_5e9b37bca08af9 1-20
+src/main/java/com/demo/admin/pojo/vo/ProductOptionVO.java
+  s_b7a814f242436a::t_b995ae2daa2bb4 1-26
+src/main/java/com/demo/admin/pojo/vo/SysRolePageVO.java
+  s_b7a814f242436a::t_74ce98abc86caa 1-20
+src/main/java/com/demo/admin/pojo/entity/ProductDO.java
+  s_b7a814f242436a::t_276537eb951627 1-36
+src/main/java/com/demo/admin/pojo/vo/SysRoleVO.java
+  s_b7a814f242436a::t_04cb13b40094de 1-20
+src/main/java/com/demo/admin/pojo/vo/SysRoleOptionVO.java
+  s_b7a814f242436a::t_e286583749dfa2 1-18
+src/main/java/com/demo/admin/controller/DashboardController.java
+  s_b7a814f242436a::t_718583f9d33325 1-27
+src/main/java/com/demo/admin/pojo/entity/SysRoleDO.java
+  s_b7a814f242436a::t_277a544b035d7c 1-27
+src/main/java/com/demo/admin/config/MybatisPlusConfig.java
+  s_b7a814f242436a::t_1c2f3dce60ec6f 4-5,25-32
+src/main/java/com/demo/admin/service/impl/CustomerServiceImpl.java
+  s_b7a814f242436a::t_90e25344e99195 10
+  s_b7a814f242436a::t_ad684cc21f7f8b 1-9,11-65,79-161
+  s_b7a814f242436a::t_de0f1208c89892 66-78
+src/main/java/com/demo/admin/pojo/vo/CustomerPageVO.java
+  s_b7a814f242436a::t_3be11fe39f3831 1-20
+src/main/java/com/demo/admin/service/impl/ProductServiceImpl.java
+  s_b7a814f242436a::t_2f688d5556e409 1-152
+src/main/java/com/demo/admin/pojo/vo/OrderVO.java
+  s_b7a814f242436a::t_cd4365b627431d 1-29
+sql/sys_customer.sql
+  s_b7a814f242436a::t_78b9996891aaed 1-28
+src/main/java/com/demo/admin/pojo/vo/ReportCategorySalesVO.java
+  s_b7a814f242436a::t_f618f5da919ef0 1-20
+src/main/resources/application.yml
+  s_b7a814f242436a::t_69bbde04547d75 20-21
+src/main/java/com/demo/admin/pojo/vo/ReportSalesVO.java
+  s_b7a814f242436a::t_f6fdb83fab4308 1-18
+src/main/java/com/demo/admin/pojo/vo/DashboardTrendItemVO.java
+  s_b7a814f242436a::t_7a4613b88c3874 1-20
+src/main/java/com/demo/admin/mapper/SysRoleMapper.java
+  s_b7a814f242436a::t_fc488d4692f37b 1-12
+src/main/java/com/demo/admin/service/impl/ReportServiceImpl.java
+  s_b7a814f242436a::t_0a7cc26802093d 1-144
+src/main/java/com/demo/admin/mapper/OrderItemMapper.java
+  s_b7a814f242436a::t_974bfb75c088cf 1-9
+src/main/java/com/demo/admin/pojo/vo/CustomerOptionVO.java
+  s_b7a814f242436a::t_a328615e3edbae 1-20
+src/main/java/com/demo/admin/pojo/vo/OrderPageVO.java
+  s_b7a814f242436a::t_eeee87bc0892f3 1-17
+src/main/java/com/demo/admin/service/impl/OrderServiceImpl.java
+  s_b7a814f242436a::t_bf1d01f43ef65a 1-244
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.5.8",
+  "base_commit_sha": "5a65dbb8bff2f8ee366ff1fe8be15ba5ee710270",
+  "prompts": {},
+  "sessions": {
+    "s_b7a814f242436a": {
+      "agent_id": {
+        "tool": "cursor",
+        "id": "af607888-e11b-4f01-a119-8d14513b5aa7",
+        "model": "default"
+      },
+      "human_author": "赵亮 <zt22732@ztn.com>"
+    }
+  }
+}
