@@ -1,0 +1,60 @@
+pom.xml
+  s_b7a814f242436a::t_50c167dbe6c45f 47-57
+src/main/java/com/demo/admin/service/FileService.java
+  s_b7a814f242436a::t_df96eabf69aff2 1-12
+sql/product-image-url.sql
+  s_b7a814f242436a::t_0877efba6c1c78 1-6
+sql/init.sql
+  s_b7a814f242436a::t_dd27af1b50c180 89
+sql/sys_product.sql
+  s_b7a814f242436a::t_1f651022e1739b 13
+src/main/java/com/demo/admin/pojo/dto/ProductSaveDTO.java
+  s_b7a814f242436a::t_57760c2256112a 38-40
+src/main/java/com/demo/admin/config/CorsConfig.java
+  s_b7a814f242436a::t_f8ca63955de6b7 3,6,9-10,12,17-19,28-36
+src/main/java/com/demo/admin/util/JwtUtil.java
+  s_b7a814f242436a::t_2caf4905359846 1-58
+src/main/java/com/demo/admin/service/impl/FileServiceImpl.java
+  s_b7a814f242436a::t_538056a19507e0 1-72
+src/main/java/com/demo/admin/pojo/vo/ProductVO.java
+  s_b7a814f242436a::t_b450f1518d7175 27-28
+src/main/java/com/demo/admin/service/impl/UserServiceImpl.java
+  s_b7a814f242436a::t_5ab36f00f47e63 11,29-31,41,60
+src/main/resources/application.yml
+  s_b7a814f242436a::t_c6bb3698d737aa 9-12,19-22
+  s_b7a814f242436a::t_124f6def7db5c9 35-39
+src/main/java/com/demo/admin/pojo/entity/ProductDO.java
+  s_b7a814f242436a::t_4ae729ca9d0f5c 35-37
+src/main/java/com/demo/admin/controller/FileController.java
+  s_b7a814f242436a::t_a05c525829f8bf 1-28
+src/main/java/com/demo/admin/service/SysUserService.java
+  s_b7a814f242436a::t_729efedc403451 26,28-30
+src/main/java/com/demo/admin/service/impl/ProductServiceImpl.java
+  s_b7a814f242436a::t_941501011ed907 148
+  s_b7a814f242436a::t_f00b6ec0f3e3ff 119
+.gitignore
+  s_b7a814f242436a::t_5e87b3b6a6bcd8 5
+src/main/java/com/demo/admin/pojo/vo/FileUploadVO.java
+  s_b7a814f242436a::t_864bc315e48626 1-17
+src/main/java/com/demo/admin/service/impl/SysUserServiceImpl.java
+  s_b7a814f242436a::t_2457f86e002565 13,34-35
+  s_b7a814f242436a::t_b083e6ce3c2d40 125-126,129-131,136-137,146-151
+src/main/java/com/demo/admin/config/JwtProperties.java
+  s_b7a814f242436a::t_bac4b0d913020c 1-20
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.5.8",
+  "base_commit_sha": "4cd6628632bd45ab68dc6a41f947737774e94ec6",
+  "prompts": {},
+  "sessions": {
+    "s_b7a814f242436a": {
+      "agent_id": {
+        "tool": "cursor",
+        "id": "af607888-e11b-4f01-a119-8d14513b5aa7",
+        "model": "default"
+      },
+      "human_author": "赵亮 <zt22732@ztn.com>"
+    }
+  }
+}
